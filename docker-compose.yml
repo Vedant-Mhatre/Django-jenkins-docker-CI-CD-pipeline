@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  jenkins:
+    build: .
+    user: root
+    volumes: 
+      - /jenkins/data:/var/jenkins_home
+      - /jenkins/artifacts:/jenkins_artifacts
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - jenkins_net
+    deploy:
+      replicas: 1
+      restart_policy:
+          condition: on-failure
+
+  nginx:
+    image: nginx:1.17
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      # - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - jenkins_net
+    deploy:
+        replicas: 1
+        restart_policy:
+            condition: on-failure
+
+networks:
+  jenkins_net:
