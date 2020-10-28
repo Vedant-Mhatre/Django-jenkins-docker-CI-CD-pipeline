@@ -3,7 +3,7 @@
 ## About
 CI/CD pipeline using Docker, Jenkins and Django
 
-Currently only [Using-jenkins-without-nginx](https://github.com/Vedant-Mhatre/Django-jenkins-docker/tree/main/Using-jenkins-without-nginx) method is working.
+Currently only [Using-jenkins-without-nginx](https://github.com/Vedant-Mhatre/Django-jenkins-docker-CI-CD-pipeline/tree/main/Using-jenkins-without-nginx) method is working.
 
 Might not pursue other methods due to their disadvantages and many errors.
 
