@@ -7,9 +7,7 @@ RUN apk update && \
     pip3 install mysqlclient && \
     apk del python3-dev mariadb-dev build-base
 
-RUN apk add netcat-openbsd
 
-# COPY . /app
 WORKDIR /app
 
 RUN python -m pip install --upgrade pip
