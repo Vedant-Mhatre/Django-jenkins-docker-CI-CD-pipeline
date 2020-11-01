@@ -44,3 +44,8 @@ python manage.py migrate
 python manage.py jenkins
 ```
 And then setup the after build steps using the above guide
+
+## To do
+
+- [ ] Remove python installation from dockerfile
+- [ ] Move from freestyle project to pipeline and use python image in it
